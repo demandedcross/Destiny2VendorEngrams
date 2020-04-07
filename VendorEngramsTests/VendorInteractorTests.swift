@@ -28,11 +28,11 @@ class VendorInteractorTests : XCTestCase {
     }
     
     func testModelHasName() {
-        XCTAssertEqual(vendors[0].name, "devrim")
+        XCTAssertEqual(vendors[0].name, "Devrim")
     }
     
     func testModelHasDropStatus() {
-        XCTAssertEqual(vendors[0].dropStatus, 1)
+        XCTAssertEqual(vendors[0].dropStatus, "Low")
     }
 }
 

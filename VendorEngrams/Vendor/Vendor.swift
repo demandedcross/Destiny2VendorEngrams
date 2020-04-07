@@ -9,6 +9,6 @@
 import Foundation
 
 struct Vendor {
-    let name : String = "devrim"
-    let dropStatus : Int = 1
+    let name : String = "Devrim"
+    let dropStatus : String = "Low"
 }
