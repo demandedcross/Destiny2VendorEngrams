@@ -12,37 +12,27 @@ import XCTest
 
 class VendorInteractorTests : XCTestCase {
     
-    func testModelCreation() {
+    var vendors : [Vendor] = []
+    
+    override func setUp() {
         let fileResponse = SingleVendorResponse()
         let network = Network(network: fileResponse)
         
         let vendorInteractor = VendorInteractor(network: network)
         
-        let vendors = vendorInteractor.getVendors()
-        
+        vendors = vendorInteractor.getVendors()
+    }
+    
+    func testModelCreation() {
         XCTAssertEqual(vendors.count, 1)
     }
     
     func testModelHasName() {
-        let fileResponse = SingleVendorResponse()
-        let network = Network(network: fileResponse)
-        
-        let vendorInteractor = VendorInteractor(network: network)
-        
-        let vendors = vendorInteractor.getVendors()
-        
         XCTAssertEqual(vendors[0].name, "devrim")
     }
     
     func testModelHasDropStatus() {
-            let fileResponse = SingleVendorResponse()
-            let network = Network(network: fileResponse)
-            
-            let vendorInteractor = VendorInteractor(network: network)
-            
-            let vendors = vendorInteractor.getVendors()
-            
-            XCTAssertEqual(vendors[0].dropStatus, 1)
+        XCTAssertEqual(vendors[0].dropStatus, 1)
     }
 }
 
