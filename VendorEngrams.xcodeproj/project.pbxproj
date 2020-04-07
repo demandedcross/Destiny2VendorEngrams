@@ -17,10 +17,11 @@
 		3FD2E412243C7FC700F4F396 /* SomeNetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD2E411243C7FC700F4F396 /* SomeNetworkProtocol.swift */; };
 		3FD2E414243C808200F4F396 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD2E413243C808200F4F396 /* Network.swift */; };
 		3FD2E416243C817700F4F396 /* validresponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 3FD2E415243C817700F4F396 /* validresponse.json */; };
-		3FD2E418243C829E00F4F396 /* VendorInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD2E417243C829E00F4F396 /* VendorInteractorTests.swift */; };
+		3FD2E418243C829E00F4F396 /* SingleVendorResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD2E417243C829E00F4F396 /* SingleVendorResponseTests.swift */; };
 		3FD2E420243C87FC00F4F396 /* LocalResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD2E41F243C87FC00F4F396 /* LocalResponse.swift */; };
 		3FD2E423243C8E1400F4F396 /* VendorInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD2E422243C8E1400F4F396 /* VendorInteractor.swift */; };
 		3FD2E425243C8E4000F4F396 /* Vendor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD2E424243C8E4000F4F396 /* Vendor.swift */; };
+		3FD2E427243C957E00F4F396 /* MultipleVendorResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD2E426243C957E00F4F396 /* MultipleVendorResponseTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,10 +49,11 @@
 		3FD2E411243C7FC700F4F396 /* SomeNetworkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeNetworkProtocol.swift; sourceTree = "<group>"; };
 		3FD2E413243C808200F4F396 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		3FD2E415243C817700F4F396 /* validresponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = validresponse.json; sourceTree = "<group>"; };
-		3FD2E417243C829E00F4F396 /* VendorInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorInteractorTests.swift; sourceTree = "<group>"; };
+		3FD2E417243C829E00F4F396 /* SingleVendorResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleVendorResponseTests.swift; sourceTree = "<group>"; };
 		3FD2E41F243C87FC00F4F396 /* LocalResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalResponse.swift; sourceTree = "<group>"; };
 		3FD2E422243C8E1400F4F396 /* VendorInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorInteractor.swift; sourceTree = "<group>"; };
 		3FD2E424243C8E4000F4F396 /* Vendor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vendor.swift; sourceTree = "<group>"; };
+		3FD2E426243C957E00F4F396 /* MultipleVendorResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleVendorResponseTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,8 +122,9 @@
 				3F48FA4024375A6D0012583A /* Info.plist */,
 				3F3414F6243C782E00721473 /* NetworkTests.swift */,
 				3FD2E415243C817700F4F396 /* validresponse.json */,
-				3FD2E417243C829E00F4F396 /* VendorInteractorTests.swift */,
+				3FD2E417243C829E00F4F396 /* SingleVendorResponseTests.swift */,
 				3FD2E41F243C87FC00F4F396 /* LocalResponse.swift */,
+				3FD2E426243C957E00F4F396 /* MultipleVendorResponseTests.swift */,
 			);
 			path = VendorEngramsTests;
 			sourceTree = "<group>";
@@ -260,8 +263,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FD2E427243C957E00F4F396 /* MultipleVendorResponseTests.swift in Sources */,
 				3FD2E420243C87FC00F4F396 /* LocalResponse.swift in Sources */,
-				3FD2E418243C829E00F4F396 /* VendorInteractorTests.swift in Sources */,
+				3FD2E418243C829E00F4F396 /* SingleVendorResponseTests.swift in Sources */,
 				3F3414F7243C782E00721473 /* NetworkTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

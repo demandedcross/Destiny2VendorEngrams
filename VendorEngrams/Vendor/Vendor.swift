@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Vendor {
+struct Vendor : Codable {
     let name : String = "Devrim"
     let dropStatus : String = "Low"
 }

@@ -26,16 +26,20 @@ class NetworkTests : XCTestCase {
 }
 
 class MockNetworkProtocol : SomeNetworkProtocol {
-   public var capturedUrlString : String = ""
-    
-    func makeRequest(url: String, completionHandler: (String) -> Void) {
-         capturedUrlString = url
+    public var capturedUrlString : String = ""
+
+    func makeRequest(url: String, completionHandler: (Data) throws -> Void) {
+        capturedUrlString = url
+        
     }
 }
 
 class RealNetworkProtocol : SomeNetworkProtocol {
-    
-    func makeRequest(url: String, completionHandler: (String) -> Void) {
-        completionHandler("")
+    func makeRequest(url: String, completionHandler: (Data) throws -> Void) {
+        do {
+            try completionHandler(Data())
+        } catch {
+            
+        }
     }
 }

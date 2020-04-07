@@ -17,8 +17,15 @@ class VendorInteractor {
     
     func getVendors(completionHandler: (_ result: [Vendor]) -> Void) {
         
-        network.getVendors(completionHandler: {_ in
-            completionHandler([Vendor()])
+        network.getVendors(completionHandler: { result in
+            let decoder = JSONDecoder()
+            
+            do {
+                let vendors = try decoder.decode([Vendor].self, from: result)
+                completionHandler(vendors)
+            } catch {
+                
+            }
         })
     }
 }
