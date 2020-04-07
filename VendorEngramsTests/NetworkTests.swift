@@ -8,6 +8,7 @@
 
 import Foundation
 import XCTest
+@testable import VendorEngrams
 
 class NetworkTests : XCTestCase {
     
@@ -22,29 +23,17 @@ class NetworkTests : XCTestCase {
     }
 }
 
-protocol SomeNetworkProtocol {
-    func makeRequest(url: String)
-}
-
-class Network {
-    
-    var network : SomeNetworkProtocol
-    
-    let endpoint = "https://api.vendorengrams.xyz/getVendorDrops"
-    
-    init(network: SomeNetworkProtocol) {
-        self.network = network
-    }
-    
-    func getVendors() {
-        self.network.makeRequest(url: endpoint)
-    }
-}
-
 class MockNetworkProtocol : SomeNetworkProtocol {
-    public var capturedUrlString : String = ""
+   public var capturedUrlString : String = ""
     
-    func makeRequest(url: String) {
-        capturedUrlString = url
+    func makeRequest(url: String, completionHandler: (String) -> Void) {
+         capturedUrlString = url
+    }
+}
+
+class RealNetworkProtocol : SomeNetworkProtocol {
+    
+    func makeRequest(url: String, completionHandler: (String) -> Void) {
+        completionHandler("")
     }
 }
