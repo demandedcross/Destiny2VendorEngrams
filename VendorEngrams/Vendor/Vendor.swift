@@ -8,7 +8,36 @@
 
 import Foundation
 
-struct Vendor : Codable {
-    let name : String = "Devrim"
+struct Vendor {
+    let name : String
     let dropStatus : String = "Low"
+    
+    init(name: String) {
+        self.name = name
+    }
+
+}
+
+extension Vendor: Decodable {
+  enum CodingKeys: String, CodingKey {
+         case name = "shorthand"
+    }
+  
+  init(from decoder: Decoder) throws {
+    let container = try decoder.container(keyedBy: CodingKeys.self)
+    let name: String = try container.decode(String.self, forKey: .name)
+//    let dropStatus: String = try container.decode(Int.self, forKey: .id)
+//
+    self.init(name: name.capitalizingFirstLetter())
+  }
+}
+
+extension String {
+    func capitalizingFirstLetter() -> String {
+        return prefix(1).capitalized + dropFirst()
+    }
+
+    mutating func capitalizeFirstLetter() {
+        self = self.capitalizingFirstLetter()
+    }
 }

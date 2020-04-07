@@ -34,4 +34,9 @@ class MultipleVendorResponseTests : XCTestCase {
     func testModelCreation() {
         XCTAssertEqual(vendors.count, 12)
     }
+    
+    func testModelHasCorrectName() {
+           XCTAssertEqual(vendors[1].name, "Sloane")
+    }
+    
 }
