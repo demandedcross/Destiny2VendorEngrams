@@ -15,12 +15,19 @@ class VendorInteractorTests : XCTestCase {
     var vendors : [Vendor] = []
     
     override func setUp() {
+        let expectation = XCTestExpectation()
+        
         let fileResponse = SingleVendorResponse()
         let network = Network(network: fileResponse)
         
         let vendorInteractor = VendorInteractor(network: network)
         
-        vendors = vendorInteractor.getVendors()
+        vendorInteractor.getVendors(completionHandler: {vendorsResult in
+            vendors = vendorsResult
+            expectation.fulfill()
+        })
+        
+        wait(for: [expectation], timeout: 5)
     }
     
     func testModelCreation() {

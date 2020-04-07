@@ -17,7 +17,9 @@ class NetworkTests : XCTestCase {
         
         let network = Network(network: networkProtocol)
         
-        network.getVendors()
+        network.getVendors(completionHandler: {_ in
+            
+        })
         
         XCTAssertEqual(networkProtocol.capturedUrlString, "https://api.vendorengrams.xyz/getVendorDrops")
     }

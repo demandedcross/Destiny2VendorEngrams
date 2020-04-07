@@ -15,9 +15,10 @@ class VendorInteractor {
         self.network = network
     }
     
-    func getVendors() -> [Vendor] {
-        network.getVendors()
+    func getVendors(completionHandler: (_ result: [Vendor]) -> Void) {
         
-        return [Vendor()]
+        network.getVendors(completionHandler: {_ in
+            completionHandler([Vendor()])
+        })
     }
 }

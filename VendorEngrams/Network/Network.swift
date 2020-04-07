@@ -18,9 +18,9 @@ class Network {
         self.network = network
     }
     
-    func getVendors() {
-        self.network.makeRequest(url: endpoint, completionHandler: {_ in
-            
+    func getVendors(completionHandler: (_ result: String) -> Void) {
+        self.network.makeRequest(url: endpoint, completionHandler: {result in
+            completionHandler(result)
         })
     }
 }
