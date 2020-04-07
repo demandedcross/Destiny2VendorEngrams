@@ -39,4 +39,12 @@ class MultipleVendorResponseTests : XCTestCase {
            XCTAssertEqual(vendors[1].name, "Sloane")
     }
     
+    func testModelHasDropStatus() {
+        XCTAssertEqual(vendors[1].dropStatus, "High")
+    }
+    
+    func testNoDataDropStatus() {
+        XCTAssertEqual(vendors[2].dropStatus, "No Data")
+    }
+    
 }

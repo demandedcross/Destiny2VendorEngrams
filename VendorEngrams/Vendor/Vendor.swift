@@ -10,25 +10,37 @@ import Foundation
 
 struct Vendor {
     let name : String
-    let dropStatus : String = "Low"
+    let dropStatus : String
     
-    init(name: String) {
+    init(name: String, dropStatus: String) {
         self.name = name
+        self.dropStatus = dropStatus
     }
 
 }
 
 extension Vendor: Decodable {
-  enum CodingKeys: String, CodingKey {
-         case name = "shorthand"
+    enum CodingKeys: String, CodingKey {
+        case name = "shorthand"
+        case dropStatus = "drop"
     }
   
   init(from decoder: Decoder) throws {
     let container = try decoder.container(keyedBy: CodingKeys.self)
     let name: String = try container.decode(String.self, forKey: .name)
-//    let dropStatus: String = try container.decode(Int.self, forKey: .id)
-//
-    self.init(name: name.capitalizingFirstLetter())
+    let dropStatus: String = try container.decode(String.self, forKey: .dropStatus)
+    
+    let dropStatusString = { () -> String in  switch dropStatus {
+    case "1":
+        return "Low"
+    case "2":
+        return "High"
+    default:
+        return "No Data"
+        }
+    }()
+
+    self.init(name: name.capitalizingFirstLetter(), dropStatus: dropStatusString)
   }
 }
 
