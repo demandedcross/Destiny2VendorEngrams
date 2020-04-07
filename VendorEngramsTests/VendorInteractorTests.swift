@@ -25,13 +25,24 @@ class VendorInteractorTests : XCTestCase {
     
     func testModelHasName() {
         let fileResponse = SingleVendorResponse()
+        let network = Network(network: fileResponse)
+        
+        let vendorInteractor = VendorInteractor(network: network)
+        
+        let vendors = vendorInteractor.getVendors()
+        
+        XCTAssertEqual(vendors[0].name, "devrim")
+    }
+    
+    func testModelHasDropStatus() {
+            let fileResponse = SingleVendorResponse()
             let network = Network(network: fileResponse)
             
             let vendorInteractor = VendorInteractor(network: network)
             
             let vendors = vendorInteractor.getVendors()
-        
-        XCTAssertEqual(vendors[0].name, "devrim")
+            
+            XCTAssertEqual(vendors[0].dropStatus, 1)
     }
 }
 
@@ -52,6 +63,7 @@ class VendorInteractor {
 
 struct Vendor : Codable {
     let name : String = "devrim"
+    let dropStatus : Int = 1
 }
 
 class SingleVendorResponse : SomeNetworkProtocol {
