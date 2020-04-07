@@ -36,26 +36,6 @@ class VendorInteractorTests : XCTestCase {
     }
 }
 
-
-class VendorInteractor {
-    var network : Network
-    
-    init(network: Network) {
-        self.network = network
-    }
-    
-    func getVendors() -> [Vendor] {
-        network.getVendors()
-        
-        return [Vendor()]
-    }
-}
-
-struct Vendor : Codable {
-    let name : String = "devrim"
-    let dropStatus : Int = 1
-}
-
 class SingleVendorResponse : SomeNetworkProtocol {
     func makeRequest(url: String, completionHandler: (String) -> Void) {
         completionHandler("[{\"vendorID\":\"396892126\",\"display\":\"1\",\"drop\":\"1\",\"shorthand\":\"devrim\",\"interval\":\"1585678590\",\"nextRefresh\":\"2020-04-07T17:00:00Z\"}]")
