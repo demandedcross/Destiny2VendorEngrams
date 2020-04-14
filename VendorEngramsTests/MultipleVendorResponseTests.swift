@@ -23,11 +23,13 @@ class MultipleVendorResponseTests : XCTestCase {
         
         let vendorInteractor = VendorInteractor(network: network)
         
-        vendorInteractor.getVendors(completionHandler: {vendorsResult in
-            vendors = vendorsResult
-            expectation.fulfill()
-        })
-        
+        vendorInteractor.getVendors { (vendors) in
+            vendors.sink { (vs) in
+                self.vendors = vs
+                expectation.fulfill()
+            }
+        }
+    
         wait(for: [expectation], timeout: 5)
     }
     

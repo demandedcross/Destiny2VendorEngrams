@@ -22,10 +22,13 @@ class SingleVendorResponseTests : XCTestCase {
         
         let vendorInteractor = VendorInteractor(network: network)
         
-        vendorInteractor.getVendors(completionHandler: {vendorsResult in
-            vendors = vendorsResult
-            expectation.fulfill()
-        })
+        vendorInteractor.getVendors { (vendors) in
+            vendors.sink { (vs) in
+                self.vendors = vs
+                expectation.fulfill()
+            }
+        }
+        
         
         wait(for: [expectation], timeout: 5)
     }
@@ -44,17 +47,11 @@ class SingleVendorResponseTests : XCTestCase {
 }
 
 class SingleVendorResponse : SomeNetworkProtocol {
+    func makeRequest(url: String, completionHandler: @escaping (Data) -> Void) {
+        completionHandler(Data(json.utf8))
+    }
+    
     let json = """
     [{\"vendorID\":\"396892126\",\"display\":\"1\",\"drop\":\"1\",\"shorthand\":\"devrim\",\"interval\":\"1585678590\",\"nextRefresh\":\"2020-04-07T17:00:00Z\"}]
     """
-    
-    func makeRequest(url: String, completionHandler: (Data) throws -> Void) {
-        do {
-            try completionHandler(Data(json.utf8))
-        } catch {
-            
-        }
-    }
-    
-    
 }
