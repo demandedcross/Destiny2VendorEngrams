@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Combine
 
 class VendorInteractor {
     var network : Network
@@ -15,17 +16,19 @@ class VendorInteractor {
         self.network = network
     }
     
-    func getVendors(completionHandler: (_ result: [Vendor]) -> Void) {
+    func getVendors(completionHandler: @escaping (_ result: AnyPublisher<[Vendor], Never>) -> Void) {
         
         network.getVendors(completionHandler: { result in
             let decoder = JSONDecoder()
-            
             do {
-                let vendors = try decoder.decode([Vendor].self, from: result)
-                completionHandler(vendors)
-            } catch {
-                
+            let vendors = try decoder.decode([Vendor].self, from: result)
+                completionHandler(
+                          Just(vendors)
+                              .eraseToAnyPublisher()
+                      )
             }
+            catch {}
+            
         })
     }
 }

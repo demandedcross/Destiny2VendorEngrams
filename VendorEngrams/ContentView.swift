@@ -9,8 +9,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var vendors: VendorsVM
+    
     var body: some View {
-        Text("Hello, World!")
+        List(vendors.vendors) { vendor in
+            Text("\(vendor.name): \(vendor.dropStatus)")
+        }
+        
     }
 }
 

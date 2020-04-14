@@ -8,19 +8,32 @@
 
 import UIKit
 import SwiftUI
+import Combine
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    var vendorsVM = VendorsVM()
+    private var disposables = Set<AnyCancellable>()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
+        let vendorInteractor = VendorInteractor(network: Network(network: DefaultHTTPClient()))
+        
+       
+        vendorInteractor.getVendors { (vendors) in
+           
+            vendors.receive(on: DispatchQueue.main)
+                .sink { (vs) in
+                    self.vendorsVM.vendors = vs
+            }.store(in: &self.disposables)
+                   
+        }
         // Create the SwiftUI view that provides the window contents.
-        let contentView = ContentView()
+        let contentView = ContentView().environmentObject(vendorsVM)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
@@ -60,5 +73,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
 
+}
+
+final class VendorsVM : ObservableObject, Identifiable {
+    @Published var vendors : [Vendor] = []
+}
+
+class DefaultHTTPClient : SomeNetworkProtocol {
+    func makeRequest(url: String, completionHandler: @escaping (Data) -> Void) {
+        let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
+            DispatchQueue.main.async {
+                completionHandler(data!)
+            }
+        }
+        
+        task.resume()
+    }
 }
 

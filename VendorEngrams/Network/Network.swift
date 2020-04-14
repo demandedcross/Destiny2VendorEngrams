@@ -18,9 +18,9 @@ class Network {
         self.network = network
     }
     
-    func getVendors(completionHandler: (_ result: Data) throws -> Void) {
+    func getVendors(completionHandler: @escaping (_ result: Data) -> Void) {
         self.network.makeRequest(url: endpoint, completionHandler: {result in
-            try completionHandler(result)
+            completionHandler(result)
         })
     }
 }

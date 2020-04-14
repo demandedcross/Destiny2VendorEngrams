@@ -9,5 +9,5 @@
 import Foundation
 
 public protocol SomeNetworkProtocol {
-    func makeRequest(url: String, completionHandler: (_ result: Data) throws -> Void)
+    func makeRequest(url: String, completionHandler: @escaping (_ result: Data) -> Void)
 }
