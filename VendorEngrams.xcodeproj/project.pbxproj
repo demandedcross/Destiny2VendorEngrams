@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3F3414F7243C782E00721473 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3414F6243C782E00721473 /* NetworkTests.swift */; };
+		3F3668D2244F30530036C655 /* VendorPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3668D1244F30530036C655 /* VendorPresenterTests.swift */; };
+		3F3668D4244F31350036C655 /* VendorInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3668D3244F31350036C655 /* VendorInteractorProtocol.swift */; };
+		3F3668D6244F31850036C655 /* VendorsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3668D5244F31850036C655 /* VendorsPresenter.swift */; };
 		3F48FA2824375A680012583A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F48FA2724375A680012583A /* AppDelegate.swift */; };
 		3F48FA2A24375A680012583A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F48FA2924375A680012583A /* SceneDelegate.swift */; };
 		3F48FA2C24375A680012583A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F48FA2B24375A680012583A /* ContentView.swift */; };
@@ -35,6 +38,9 @@
 
 /* Begin PBXFileReference section */
 		3F3414F6243C782E00721473 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
+		3F3668D1244F30530036C655 /* VendorPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorPresenterTests.swift; sourceTree = "<group>"; };
+		3F3668D3244F31350036C655 /* VendorInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorInteractorProtocol.swift; sourceTree = "<group>"; };
+		3F3668D5244F31850036C655 /* VendorsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorsPresenter.swift; sourceTree = "<group>"; };
 		3F48FA2424375A680012583A /* VendorEngrams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VendorEngrams.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F48FA2724375A680012583A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F48FA2924375A680012583A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +128,7 @@
 				3FD2E415243C817700F4F396 /* validresponse.json */,
 				3FD2E41F243C87FC00F4F396 /* LocalResponse.swift */,
 				3FD2E426243C957E00F4F396 /* MultipleVendorResponseTests.swift */,
+				3F3668D1244F30530036C655 /* VendorPresenterTests.swift */,
 			);
 			path = VendorEngramsTests;
 			sourceTree = "<group>";
@@ -140,6 +147,8 @@
 			children = (
 				3FD2E422243C8E1400F4F396 /* VendorInteractor.swift */,
 				3FD2E424243C8E4000F4F396 /* Vendor.swift */,
+				3F3668D3244F31350036C655 /* VendorInteractorProtocol.swift */,
+				3F3668D5244F31850036C655 /* VendorsPresenter.swift */,
 			);
 			path = Vendor;
 			sourceTree = "<group>";
@@ -248,8 +257,10 @@
 			files = (
 				3FD2E423243C8E1400F4F396 /* VendorInteractor.swift in Sources */,
 				3FD2E425243C8E4000F4F396 /* Vendor.swift in Sources */,
+				3F3668D6244F31850036C655 /* VendorsPresenter.swift in Sources */,
 				3FD2E414243C808200F4F396 /* Network.swift in Sources */,
 				3FD2E412243C7FC700F4F396 /* SomeNetworkProtocol.swift in Sources */,
+				3F3668D4244F31350036C655 /* VendorInteractorProtocol.swift in Sources */,
 				3F48FA2824375A680012583A /* AppDelegate.swift in Sources */,
 				3F48FA2A24375A680012583A /* SceneDelegate.swift in Sources */,
 				3F48FA2C24375A680012583A /* ContentView.swift in Sources */,
@@ -262,6 +273,7 @@
 			files = (
 				3FD2E427243C957E00F4F396 /* MultipleVendorResponseTests.swift in Sources */,
 				3FD2E420243C87FC00F4F396 /* LocalResponse.swift in Sources */,
+				3F3668D2244F30530036C655 /* VendorPresenterTests.swift in Sources */,
 				3F3414F7243C782E00721473 /* NetworkTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

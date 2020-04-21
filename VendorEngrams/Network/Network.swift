@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Combine
 
 class Network {
     
@@ -16,6 +17,10 @@ class Network {
     
     init(network: SomeNetworkProtocol) {
         self.network = network
+    }
+    
+    func getVendors() -> AnyPublisher<Data, VendorError> {
+        return self.network.makeRequest(url: endpoint)
     }
     
     func getVendors(completionHandler: @escaping (_ result: Data) -> Void) {

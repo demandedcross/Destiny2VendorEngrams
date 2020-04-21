@@ -7,7 +7,10 @@
 //
 
 import Foundation
+import Combine
 
 public protocol SomeNetworkProtocol {
+    
+    func makeRequest(url: String) -> AnyPublisher<Data, VendorError> 
     func makeRequest(url: String, completionHandler: @escaping (_ result: Data) -> Void)
 }

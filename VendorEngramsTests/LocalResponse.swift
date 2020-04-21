@@ -8,10 +8,21 @@
 
 import Foundation
 import VendorEngrams
+import Combine
 
 class LocalResponse : SomeNetworkProtocol {
+    let publisher = PassthroughSubject<Data, VendorError>()
+    
+    func makeRequest(url: String) -> AnyPublisher<Data, VendorError> {
+        return publisher.eraseToAnyPublisher()
+    }
+    
     func makeRequest(url: String, completionHandler: @escaping (Data) -> Void) {
         completionHandler(Data(json.utf8))
+    }
+    
+    public func sendData() {
+        publisher.send(Data(self.json.utf8))
     }
     
     

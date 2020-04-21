@@ -10,10 +10,13 @@ import Foundation
 
 import XCTest
 @testable import VendorEngrams
+import Combine
 
 class MultipleVendorResponseTests : XCTestCase {
     
     var vendors : [Vendor] = []
+    private var disposables = Set<AnyCancellable>()
+
     
     override func setUp() {
         let expectation = XCTestExpectation()
@@ -23,12 +26,22 @@ class MultipleVendorResponseTests : XCTestCase {
         
         let vendorInteractor = VendorInteractor(network: network)
         
-        vendorInteractor.getVendors { (vendors) in
-            vendors.sink { (vs) in
-                self.vendors = vs
+        vendorInteractor.getVendors()
+           
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }, receiveValue: { vendors in
+                self.vendors = vendors
                 expectation.fulfill()
-            }
-        }
+            }).store(in: &disposables)
+        
+        fileResponse.sendData()
+        
     
         wait(for: [expectation], timeout: 5)
     }

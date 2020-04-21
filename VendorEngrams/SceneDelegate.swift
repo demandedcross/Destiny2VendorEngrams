@@ -23,15 +23,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let vendorInteractor = VendorInteractor(network: Network(network: DefaultHTTPClient()))
         
-       
-        vendorInteractor.getVendors { (vendors) in
-           
-            vendors.receive(on: DispatchQueue.main)
-                .sink { (vs) in
-                    self.vendorsVM.vendors = vs
-            }.store(in: &self.disposables)
-                   
-        }
+        vendorInteractor.getVendors()
+            .receive(on: DispatchQueue.main)
+             .sink(receiveCompletion: { completion in
+                   switch completion {
+                   case .finished:
+                       break
+                   case .failure(let error):
+                       print(error.localizedDescription)
+                   }
+               }, receiveValue: { vendors in
+                self.vendorsVM.vendors = vendors
+             }).store(in: &self.disposables)
+        
         // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView().environmentObject(vendorsVM)
 
@@ -80,6 +84,17 @@ final class VendorsVM : ObservableObject, Identifiable {
 }
 
 class DefaultHTTPClient : SomeNetworkProtocol {
+    func makeRequest(url: String) -> AnyPublisher<Data, VendorError> {
+        return URLSession.shared.dataTaskPublisher(for: URLRequest(url: URL(string:url)!))
+            .tryMap { data, response in
+                return data
+        }
+        .mapError { error in
+            .network(description: error.localizedDescription)
+        }
+        .eraseToAnyPublisher()
+    }
+    
     func makeRequest(url: String, completionHandler: @escaping (Data) -> Void) {
         let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
             DispatchQueue.main.async {
@@ -89,5 +104,9 @@ class DefaultHTTPClient : SomeNetworkProtocol {
         
         task.resume()
     }
+}
+
+public enum VendorError: Error {
+  case network(description: String)
 }
 

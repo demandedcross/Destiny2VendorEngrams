@@ -8,6 +8,7 @@
 
 import Foundation
 import XCTest
+import Combine
 @testable import VendorEngrams
 
 class NetworkTests : XCTestCase {
@@ -27,18 +28,40 @@ class NetworkTests : XCTestCase {
 
 class MockNetworkProtocol : SomeNetworkProtocol {
     func makeRequest(url: String, completionHandler: @escaping (Data) -> Void) {
-          capturedUrlString = url
+        
     }
     
+    func makeRequest(url: String) -> AnyPublisher<Data, VendorError> {
+         capturedUrlString = url
+        
+        return PassthroughSubject<Data, VendorError>() .eraseToAnyPublisher()
+    }
+
     public var capturedUrlString : String = ""
 }
 
-class RealNetworkProtocol : SomeNetworkProtocol {
-    func makeRequest(url: String, completionHandler: @escaping (Data) -> Void) {
-         completionHandler(Data())
-    }
+
     
-    func makeRequest(url: String, completionHandler: (Data) throws -> Void) {
-     
-    }
-}
+//struct StubPublisher: Publisher {
+//    typealias Output = Data
+//    
+//    typealias Failure = VendorError
+//    
+//    var data : Data
+//    
+//    init(data: Data) {
+//        self.data = data
+//    }
+//    
+//    
+//    func receive<S: Subscriber>(subscriber: S) where
+//        StubPublisher.Failure == S.Failure, StubPublisher.Output == S.Input {
+//        
+//            let subscription = StubPublisher(request: urlRequest,
+//                                                subscriber: subscriber)
+//            
+//            subscriber.receive(subscription: subscription)
+//    }
+//}
+
+
