@@ -53,4 +53,12 @@ class MultipleVendorResponseTests : XCTestCase {
         XCTAssertEqual(vendors[1].displayStatus, true)
     }
     
+    func testCanGetFalseDisplayStatus() {
+        XCTAssertEqual(vendors[0].displayStatus, false)
+    }
+    
+    func testUnexpectedValueGivesDisplayStatusFalse() {
+          XCTAssertEqual(vendors[3].displayStatus, false)
+    }
+    
 }

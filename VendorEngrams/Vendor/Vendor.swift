@@ -32,6 +32,7 @@ extension Vendor: Decodable {
         case id = "vendorID"
         case name = "shorthand"
         case dropStatus = "drop"
+        case displayStatus = "display"
     }
   
   init(from decoder: Decoder) throws {
@@ -39,6 +40,7 @@ extension Vendor: Decodable {
     let name: String = try container.decode(String.self, forKey: .name)
     let dropStatus: String = try container.decode(String.self, forKey: .dropStatus)
     let id: String = try container.decode(String.self, forKey: .id)
+    let displayStatus: String = try container.decode(String.self, forKey: .displayStatus)
     
     let dropStatusString = { () -> String in  switch dropStatus {
     case "1":
@@ -49,8 +51,18 @@ extension Vendor: Decodable {
         return "No Data"
         }
     }()
+    
+    let displayStatusBool = { () -> Bool in switch displayStatus {
+    case "1":
+        return true
+    default:
+        return false
+        
+        }
+        
+    }()
 
-    self.init(name: name.capitalizingFirstLetter(), dropStatus: dropStatusString, id: id, displayStatus: true)
+    self.init(name: name.capitalizingFirstLetter(), dropStatus: dropStatusString, id: id, displayStatus: displayStatusBool)
   }
 }
 
