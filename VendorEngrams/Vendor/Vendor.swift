@@ -13,11 +13,16 @@ struct Vendor : Identifiable {
     
     let name : String
     let dropStatus : String
+    let displayStatus: Bool
     
-    init(name: String, dropStatus: String, id: String) {
+    init(name: String,
+         dropStatus: String,
+         id: String,
+         displayStatus:Bool) {
         self.name = name
         self.dropStatus = dropStatus
         self.id = id
+        self.displayStatus = displayStatus
     }
 
 }
@@ -45,7 +50,7 @@ extension Vendor: Decodable {
         }
     }()
 
-    self.init(name: name.capitalizingFirstLetter(), dropStatus: dropStatusString, id: id)
+    self.init(name: name.capitalizingFirstLetter(), dropStatus: dropStatusString, id: id, displayStatus: true)
   }
 }
 

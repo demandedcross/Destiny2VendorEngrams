@@ -49,4 +49,8 @@ class MultipleVendorResponseTests : XCTestCase {
         XCTAssertEqual(vendors[2].dropStatus, "No Data")
     }
     
+    func testCanGetDisplayStatus() {
+        XCTAssertEqual(vendors[1].displayStatus, true)
+    }
+    
 }
