@@ -22,10 +22,4 @@ class Network {
     func getVendors() -> AnyPublisher<Data, VendorError> {
         return self.network.makeRequest(url: endpoint)
     }
-    
-    func getVendors(completionHandler: @escaping (_ result: Data) -> Void) {
-        self.network.makeRequest(url: endpoint, completionHandler: {result in
-            completionHandler(result)
-        })
-    }
 }

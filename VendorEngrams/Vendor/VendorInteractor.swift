@@ -23,20 +23,4 @@ class VendorInteractor : VendorInteractorProtocol {
                 try self.decoder.decode([Vendor].self, from: data)
         }.eraseToAnyPublisher()
     }
-    
-//    func getVendors(completionHandler: @escaping (_ result: AnyPublisher<[Vendor], Never>) -> Void) {
-//        
-//        network.getVendors(completionHandler: { result in
-//            
-//            do {
-//                let vendors = try self.decoder.decode([Vendor].self, from: result)
-//                completionHandler(
-//                          Just(vendors)
-//                              .eraseToAnyPublisher()
-//                      )
-//            }
-//            catch {}
-//            
-//        })
-//    }
 }
