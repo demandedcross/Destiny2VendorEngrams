@@ -62,16 +62,6 @@ extension Vendor: Decodable {
         
     }()
 
-    self.init(name: name.capitalizingFirstLetter(), dropStatus: dropStatusString, id: id, displayStatus: displayStatusBool)
+    self.init(name: name, dropStatus: dropStatusString, id: id, displayStatus: displayStatusBool)
   }
-}
-
-extension String {
-    func capitalizingFirstLetter() -> String {
-        return prefix(1).capitalized + dropFirst()
-    }
-
-    mutating func capitalizeFirstLetter() {
-        self = self.capitalizingFirstLetter()
-    }
 }

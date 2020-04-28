@@ -24,6 +24,7 @@
 		3FD2E423243C8E1400F4F396 /* VendorInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD2E422243C8E1400F4F396 /* VendorInteractor.swift */; };
 		3FD2E425243C8E4000F4F396 /* Vendor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD2E424243C8E4000F4F396 /* Vendor.swift */; };
 		3FD2E427243C957E00F4F396 /* MultipleVendorResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD2E426243C957E00F4F396 /* MultipleVendorResponseTests.swift */; };
+		3FD56C192458681500AAC351 /* VendorsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD56C182458681500AAC351 /* VendorsVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		3FD2E422243C8E1400F4F396 /* VendorInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorInteractor.swift; sourceTree = "<group>"; };
 		3FD2E424243C8E4000F4F396 /* Vendor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vendor.swift; sourceTree = "<group>"; };
 		3FD2E426243C957E00F4F396 /* MultipleVendorResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleVendorResponseTests.swift; sourceTree = "<group>"; };
+		3FD56C182458681500AAC351 /* VendorsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorsVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 				3FD2E424243C8E4000F4F396 /* Vendor.swift */,
 				3F3668D3244F31350036C655 /* VendorInteractorProtocol.swift */,
 				3F3668D5244F31850036C655 /* VendorsPresenter.swift */,
+				3FD56C182458681500AAC351 /* VendorsVM.swift */,
 			);
 			path = Vendor;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			files = (
 				3FD2E423243C8E1400F4F396 /* VendorInteractor.swift in Sources */,
 				3FD2E425243C8E4000F4F396 /* Vendor.swift in Sources */,
+				3FD56C192458681500AAC351 /* VendorsVM.swift in Sources */,
 				3F3668D6244F31850036C655 /* VendorsPresenter.swift in Sources */,
 				3FD2E414243C808200F4F396 /* Network.swift in Sources */,
 				3FD2E412243C7FC700F4F396 /* SomeNetworkProtocol.swift in Sources */,

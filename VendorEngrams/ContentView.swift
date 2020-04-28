@@ -13,7 +13,7 @@ struct ContentView: View {
     
     var body: some View {
         List(vendors.vendors) { vendor in
-            Text("\(vendor.name): \(vendor.dropStatus)")
+            Text("\(vendor.name): \(vendor.dropping)")
         }
         
     }

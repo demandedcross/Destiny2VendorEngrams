@@ -17,12 +17,33 @@ class VendorsPresenter {
         self.vendorInteractor = vendorInteractor
     }
     
-    func displayVendors() -> AnyPublisher<[Vendor], Error> {
+    func displayVendors() -> AnyPublisher<[VendorVM], Error> {
         return vendorInteractor.getVendors()
             .tryMap { (vendors) in
                 vendors.filter { (vendor) in
                     vendor.displayStatus
+                }.map { vendor in
+                    return  VendorVM(name: self.nameTranslation(name: vendor.name), dropping: vendor.dropStatus)
                 }
         }.eraseToAnyPublisher()
+    }
+    
+    private func nameTranslation(name: String) -> String {
+        switch name {
+        case "fanboy":
+            return "Vance"
+        default:
+            return name.capitalizingFirstLetter()
+        }
+    }
+}
+
+extension String {
+    func capitalizingFirstLetter() -> String {
+        return prefix(1).capitalized + dropFirst()
+    }
+
+    mutating func capitalizeFirstLetter() {
+        self = self.capitalizingFirstLetter()
     }
 }

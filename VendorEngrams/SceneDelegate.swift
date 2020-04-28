@@ -80,10 +80,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
-final class VendorsVM : ObservableObject, Identifiable {
-    @Published var vendors : [Vendor] = []
-}
-
 class DefaultHTTPClient : SomeNetworkProtocol {
     func makeRequest(url: String) -> AnyPublisher<Data, VendorError> {
         return URLSession.shared.dataTaskPublisher(for: URLRequest(url: URL(string:url)!))

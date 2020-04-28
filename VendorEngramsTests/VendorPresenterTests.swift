@@ -13,13 +13,12 @@ import Combine
 class VendorPresenterTests : XCTestCase {
     
     private var disposables = Set<AnyCancellable>()
-    
-    func testVendorsWithDisplayStatusFalseAreExcluded() {
+    let interactor = StubVendorInteractor()
+     var receivedVendors : [VendorVM] = []
         let expectation = XCTestExpectation()
-               
-        let interactor = StubVendorInteractor()
+    
+    override func setUp() {
         let presenter = VendorsPresenter(vendorInteractor: interactor)
-        var receivedVendors : [Vendor] = []
         
         _ = presenter.displayVendors()
             .sink(receiveCompletion: { completion in
@@ -30,18 +29,31 @@ class VendorPresenterTests : XCTestCase {
                   print(error.localizedDescription)
               }
           }, receiveValue: { vendors in
-              receivedVendors = vendors
-              expectation.fulfill()
+            self.receivedVendors = vendors
+            self.expectation.fulfill()
           }).store(in: &disposables)
         
+    }
+    
+    func testVendorsWithDisplayStatusFalseAreExcluded() {
+    
         interactor.sendVendors()
         
         wait(for: [expectation], timeout: 5)
         
         XCTAssertEqual(receivedVendors.count, 1)
-        XCTAssertTrue(receivedVendors[0].displayStatus)
+        XCTAssertEqual(receivedVendors[0].name, "Vendor1")
         
     }
+    
+    func testFanboyIsTranslatedToVance() {
+        interactor.sendFanboy()
+        
+        wait(for: [expectation], timeout: 5)
+        XCTAssertEqual(receivedVendors.count, 1)
+        XCTAssertEqual(receivedVendors[0].name, "Vance")
+    }
+
 }
 
 
@@ -58,6 +70,11 @@ class StubVendorInteractor: VendorInteractorProtocol {
         publisher.send(vendors)
     }
     
+    func sendFanboy() {
+        publisher.send(fanboy)
+    }
+    
+    let fanboy = [Vendor(name: "fanboy", dropStatus: "", id: "", displayStatus: true)]
     
     let vendors = [Vendor(name: "vendor1", dropStatus: "dropStatus1", id: "id1", displayStatus: true),
                     Vendor(name: "vendor2", dropStatus: "dropStatus2", id: "id2", displayStatus: false)]
