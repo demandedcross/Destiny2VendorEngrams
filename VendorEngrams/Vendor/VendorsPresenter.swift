@@ -9,7 +9,10 @@
 import Foundation
 import Combine
 
-class VendorsPresenter {
+protocol VendorPresenterProtocol {
+    func displayVendors() -> AnyPublisher<[VendorVM], Error>
+}
+class VendorsPresenter : VendorPresenterProtocol {
     let vendorInteractor : VendorInteractorProtocol
     private var disposables = Set<AnyCancellable>()
 

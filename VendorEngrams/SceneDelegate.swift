@@ -14,8 +14,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     var vendorsVM = VendorsVM()
-    private var disposables = Set<AnyCancellable>()
-
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
@@ -24,21 +23,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let vendorInteractor = VendorInteractor(network: Network(network: DefaultHTTPClient()))
         let vendorPresenter = VendorsPresenter(vendorInteractor: vendorInteractor)
         
-        vendorPresenter.displayVendors()
-            .receive(on: DispatchQueue.main)
-             .sink(receiveCompletion: { completion in
-                   switch completion {
-                   case .finished:
-                       break
-                   case .failure(let error):
-                       print(error.localizedDescription)
-                   }
-               }, receiveValue: { vendors in
-                self.vendorsVM.vendors = vendors
-             }).store(in: &self.disposables)
-        
         // Create the SwiftUI view that provides the window contents.
-        let contentView = ContentView().environmentObject(vendorsVM)
+        let contentView = ContentView(presenter: vendorPresenter)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
