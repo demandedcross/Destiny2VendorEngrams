@@ -22,8 +22,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
         let vendorInteractor = VendorInteractor(network: Network(network: DefaultHTTPClient()))
+        let vendorPresenter = VendorsPresenter(vendorInteractor: vendorInteractor)
         
-        vendorInteractor.getVendors()
+        vendorPresenter.displayVendors()
             .receive(on: DispatchQueue.main)
              .sink(receiveCompletion: { completion in
                    switch completion {

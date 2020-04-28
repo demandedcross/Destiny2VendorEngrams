@@ -17,7 +17,12 @@ class VendorsPresenter {
         self.vendorInteractor = vendorInteractor
     }
     
-//    func displayVendors() -> AnyPublisher<[Vendor], Never> {
-//
-//    }
+    func displayVendors() -> AnyPublisher<[Vendor], Error> {
+        return vendorInteractor.getVendors()
+            .tryMap { (vendors) in
+                vendors.filter { (vendor) in
+                    vendor.displayStatus
+                }
+        }.eraseToAnyPublisher()
+    }
 }
