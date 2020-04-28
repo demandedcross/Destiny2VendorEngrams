@@ -22,7 +22,10 @@ class VendorsPresenter {
             .tryMap { (vendors) in
                 vendors.filter { (vendor) in
                     vendor.displayStatus
-                }.map { vendor in
+                }.sorted {vendor1, vendor2 in
+                    vendor1.dropStatus > vendor2.dropStatus
+                }
+                .map { vendor in
                     return  VendorVM(name: self.nameTranslation(name: vendor.name),
                                      dropping: self.dropStatusTranslation(dropStatus: vendor.dropStatus))
                 }

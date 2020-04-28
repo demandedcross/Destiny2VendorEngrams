@@ -60,9 +60,9 @@ class VendorPresenterTests : XCTestCase {
         wait(for: [expectation], timeout: 5)
         XCTAssertEqual(receivedVendors.count, 3)
         
-        XCTAssertEqual(receivedVendors[0].dropping, "No Data")
+        XCTAssertEqual(receivedVendors[2].dropping, "No Data")
         XCTAssertEqual(receivedVendors[1].dropping, "Low")
-        XCTAssertEqual(receivedVendors[2].dropping, "High")
+        XCTAssertEqual(receivedVendors[0].dropping, "High")
     }
 
 }
