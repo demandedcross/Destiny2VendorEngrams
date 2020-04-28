@@ -23,7 +23,8 @@ class VendorsPresenter {
                 vendors.filter { (vendor) in
                     vendor.displayStatus
                 }.map { vendor in
-                    return  VendorVM(name: self.nameTranslation(name: vendor.name), dropping: vendor.dropStatus)
+                    return  VendorVM(name: self.nameTranslation(name: vendor.name),
+                                     dropping: self.dropStatusTranslation(dropStatus: vendor.dropStatus))
                 }
         }.eraseToAnyPublisher()
     }
@@ -36,6 +37,19 @@ class VendorsPresenter {
             return name.capitalizingFirstLetter()
         }
     }
+    
+    private func dropStatusTranslation(dropStatus: String) -> String {
+        
+        switch dropStatus {
+        case "1":
+            return "Low"
+        case "2":
+            return "High"
+        default:
+            return "No Data"
+        }
+    }
+    
 }
 
 extension String {

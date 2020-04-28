@@ -53,6 +53,17 @@ class VendorPresenterTests : XCTestCase {
         XCTAssertEqual(receivedVendors.count, 1)
         XCTAssertEqual(receivedVendors[0].name, "Vance")
     }
+    
+    func testDropStatusExamplesAreTranslatedForView() {
+        interactor.sendDropStatusExamples()
+        
+        wait(for: [expectation], timeout: 5)
+        XCTAssertEqual(receivedVendors.count, 3)
+        
+        XCTAssertEqual(receivedVendors[0].dropping, "No Data")
+        XCTAssertEqual(receivedVendors[1].dropping, "Low")
+        XCTAssertEqual(receivedVendors[2].dropping, "High")
+    }
 
 }
 
@@ -74,9 +85,17 @@ class StubVendorInteractor: VendorInteractorProtocol {
         publisher.send(fanboy)
     }
     
+    func sendDropStatusExamples() {
+        publisher.send(dropStatusExamples)
+    }
+    
     let fanboy = [Vendor(name: "fanboy", dropStatus: "", id: "", displayStatus: true)]
     
-    let vendors = [Vendor(name: "vendor1", dropStatus: "dropStatus1", id: "id1", displayStatus: true),
-                    Vendor(name: "vendor2", dropStatus: "dropStatus2", id: "id2", displayStatus: false)]
+    let vendors = [Vendor(name: "vendor1", dropStatus: "0", id: "id1", displayStatus: true),
+                    Vendor(name: "vendor2", dropStatus: "0", id: "id2", displayStatus: false)]
+    
+    let dropStatusExamples = [Vendor(name: "vendor1", dropStatus: "0", id: "id1", displayStatus: true),
+                              Vendor(name: "vendor2", dropStatus: "1", id: "id2", displayStatus: true),
+                                Vendor(name: "vendor2", dropStatus: "2", id: "id2", displayStatus: true)]
     
 }
