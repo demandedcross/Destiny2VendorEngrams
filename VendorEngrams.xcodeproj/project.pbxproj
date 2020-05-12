@@ -26,6 +26,34 @@
 		3FD2E427243C957E00F4F396 /* MultipleVendorResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD2E426243C957E00F4F396 /* MultipleVendorResponseTests.swift */; };
 		3FD56C192458681500AAC351 /* VendorsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD56C182458681500AAC351 /* VendorsVM.swift */; };
 		3FD56C1C2458722200AAC351 /* RefreshingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD56C1B2458722200AAC351 /* RefreshingScrollView.swift */; };
+		3FD56CCB246AD6B300AAC351 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD56CCA246AD6B300AAC351 /* IntentHandler.swift */; };
+		3FD56CD4246AD6B300AAC351 /* IntentsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD56CD3246AD6B300AAC351 /* IntentsUI.framework */; };
+		3FD56CD7246AD6B300AAC351 /* IntentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD56CD6246AD6B300AAC351 /* IntentViewController.swift */; };
+		3FD56CDA246AD6B300AAC351 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FD56CD8246AD6B300AAC351 /* MainInterface.storyboard */; };
+		3FD56CDE246AD6B300AAC351 /* VendorGhostUI.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3FD56CD1246AD6B300AAC351 /* VendorGhostUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3FD56CE1246AD6B300AAC351 /* VendorGhost.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3FD56CC8246AD6B300AAC351 /* VendorGhost.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3FD56CEA246AD72B00AAC351 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 3FD56CE9246AD72B00AAC351 /* Intents.intentdefinition */; };
+		3FD56CEB246AD72B00AAC351 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 3FD56CE9246AD72B00AAC351 /* Intents.intentdefinition */; };
+		3FD56CEC246AD72B00AAC351 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 3FD56CE9246AD72B00AAC351 /* Intents.intentdefinition */; };
+		3FD56CEE246ADA8300AAC351 /* VendorsIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD56CED246ADA8300AAC351 /* VendorsIntentHandler.swift */; };
+		3FD56CEF246ADA8300AAC351 /* VendorsIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD56CED246ADA8300AAC351 /* VendorsIntentHandler.swift */; };
+		3FD56CF0246ADA8300AAC351 /* VendorsIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD56CED246ADA8300AAC351 /* VendorsIntentHandler.swift */; };
+		3FD56CF2246ADB5500AAC351 /* DefaultHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD56CF1246ADB5500AAC351 /* DefaultHTTPClient.swift */; };
+		3FD56CF8246ADBB000AAC351 /* VendorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD56CF7246ADBB000AAC351 /* VendorError.swift */; };
+		3FD56CF9246ADBB000AAC351 /* VendorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD56CF7246ADBB000AAC351 /* VendorError.swift */; };
+		3FD56CFA246ADBB000AAC351 /* VendorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD56CF7246ADBB000AAC351 /* VendorError.swift */; };
+		3FD56CFB246ADD3B00AAC351 /* VendorInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD2E422243C8E1400F4F396 /* VendorInteractor.swift */; };
+		3FD56CFC246ADD6300AAC351 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD2E413243C808200F4F396 /* Network.swift */; };
+		3FD56CFD246ADD6600AAC351 /* DefaultHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD56CF1246ADB5500AAC351 /* DefaultHTTPClient.swift */; };
+		3FD56CFE246ADD7D00AAC351 /* SomeNetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD2E411243C7FC700F4F396 /* SomeNetworkProtocol.swift */; };
+		3FD56CFF246ADD9200AAC351 /* VendorInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3668D3244F31350036C655 /* VendorInteractorProtocol.swift */; };
+		3FD56D00246ADD9A00AAC351 /* Vendor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD2E424243C8E4000F4F396 /* Vendor.swift */; };
+		3FD56D01246ADDB300AAC351 /* VendorInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD2E422243C8E1400F4F396 /* VendorInteractor.swift */; };
+		3FD56D02246ADDBD00AAC351 /* VendorInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3668D3244F31350036C655 /* VendorInteractorProtocol.swift */; };
+		3FD56D03246ADDC200AAC351 /* Vendor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD2E424243C8E4000F4F396 /* Vendor.swift */; };
+		3FD56D04246ADDC500AAC351 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD2E413243C808200F4F396 /* Network.swift */; };
+		3FD56D05246ADDC800AAC351 /* DefaultHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD56CF1246ADB5500AAC351 /* DefaultHTTPClient.swift */; };
+		3FD56D06246ADDCF00AAC351 /* SomeNetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD2E411243C7FC700F4F396 /* SomeNetworkProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +64,36 @@
 			remoteGlobalIDString = 3F48FA2324375A680012583A;
 			remoteInfo = VendorEngrams;
 		};
+		3FD56CDC246AD6B300AAC351 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F48FA1C24375A680012583A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3FD56CD0246AD6B300AAC351;
+			remoteInfo = VendorGhostUI;
+		};
+		3FD56CDF246AD6B300AAC351 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F48FA1C24375A680012583A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3FD56CC7246AD6B300AAC351;
+			remoteInfo = VendorGhost;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3FD56CE8246AD6B300AAC351 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3FD56CE1246AD6B300AAC351 /* VendorGhost.appex in Embed App Extensions */,
+				3FD56CDE246AD6B300AAC351 /* VendorGhostUI.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3F3414F6243C782E00721473 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
@@ -62,6 +119,18 @@
 		3FD2E426243C957E00F4F396 /* MultipleVendorResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleVendorResponseTests.swift; sourceTree = "<group>"; };
 		3FD56C182458681500AAC351 /* VendorsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorsVM.swift; sourceTree = "<group>"; };
 		3FD56C1B2458722200AAC351 /* RefreshingScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshingScrollView.swift; sourceTree = "<group>"; };
+		3FD56CC8246AD6B300AAC351 /* VendorGhost.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = VendorGhost.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FD56CCA246AD6B300AAC351 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		3FD56CCC246AD6B300AAC351 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FD56CD1246AD6B300AAC351 /* VendorGhostUI.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = VendorGhostUI.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FD56CD3246AD6B300AAC351 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
+		3FD56CD6246AD6B300AAC351 /* IntentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentViewController.swift; sourceTree = "<group>"; };
+		3FD56CD9246AD6B300AAC351 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		3FD56CDB246AD6B300AAC351 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FD56CE9246AD72B00AAC351 /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
+		3FD56CED246ADA8300AAC351 /* VendorsIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorsIntentHandler.swift; sourceTree = "<group>"; };
+		3FD56CF1246ADB5500AAC351 /* DefaultHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHTTPClient.swift; sourceTree = "<group>"; };
+		3FD56CF7246ADBB000AAC351 /* VendorError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,14 +148,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3FD56CC5246AD6B300AAC351 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FD56CCE246AD6B300AAC351 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FD56CD4246AD6B300AAC351 /* IntentsUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		3F48FA1B24375A680012583A = {
 			isa = PBXGroup;
 			children = (
+				3FD56CE9246AD72B00AAC351 /* Intents.intentdefinition */,
 				3F48FA2624375A680012583A /* VendorEngrams */,
 				3F48FA3D24375A6D0012583A /* VendorEngramsTests */,
+				3FD56CC9246AD6B300AAC351 /* VendorGhost */,
+				3FD56CD5246AD6B300AAC351 /* VendorGhostUI */,
+				3FD56CD2246AD6B300AAC351 /* Frameworks */,
 				3F48FA2524375A680012583A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,6 +184,8 @@
 			children = (
 				3F48FA2424375A680012583A /* VendorEngrams.app */,
 				3F48FA3A24375A6D0012583A /* VendorEngramsTests.xctest */,
+				3FD56CC8246AD6B300AAC351 /* VendorGhost.appex */,
+				3FD56CD1246AD6B300AAC351 /* VendorGhostUI.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,6 +193,7 @@
 		3F48FA2624375A680012583A /* VendorEngrams */ = {
 			isa = PBXGroup;
 			children = (
+				3FD56CF6246ADB9600AAC351 /* Errors */,
 				3FD56C1A2458721500AAC351 /* UI */,
 				3FD2E421243C8E0700F4F396 /* Vendor */,
 				3FD2E410243C7F9E00F4F396 /* Network */,
@@ -143,6 +234,7 @@
 			children = (
 				3FD2E411243C7FC700F4F396 /* SomeNetworkProtocol.swift */,
 				3FD2E413243C808200F4F396 /* Network.swift */,
+				3FD56CF1246ADB5500AAC351 /* DefaultHTTPClient.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -167,6 +259,42 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		3FD56CC9246AD6B300AAC351 /* VendorGhost */ = {
+			isa = PBXGroup;
+			children = (
+				3FD56CCA246AD6B300AAC351 /* IntentHandler.swift */,
+				3FD56CCC246AD6B300AAC351 /* Info.plist */,
+				3FD56CED246ADA8300AAC351 /* VendorsIntentHandler.swift */,
+			);
+			path = VendorGhost;
+			sourceTree = "<group>";
+		};
+		3FD56CD2246AD6B300AAC351 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3FD56CD3246AD6B300AAC351 /* IntentsUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3FD56CD5246AD6B300AAC351 /* VendorGhostUI */ = {
+			isa = PBXGroup;
+			children = (
+				3FD56CD6246AD6B300AAC351 /* IntentViewController.swift */,
+				3FD56CD8246AD6B300AAC351 /* MainInterface.storyboard */,
+				3FD56CDB246AD6B300AAC351 /* Info.plist */,
+			);
+			path = VendorGhostUI;
+			sourceTree = "<group>";
+		};
+		3FD56CF6246ADB9600AAC351 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				3FD56CF7246ADBB000AAC351 /* VendorError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -177,10 +305,13 @@
 				3F48FA2024375A680012583A /* Sources */,
 				3F48FA2124375A680012583A /* Frameworks */,
 				3F48FA2224375A680012583A /* Resources */,
+				3FD56CE8246AD6B300AAC351 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				3FD56CDD246AD6B300AAC351 /* PBXTargetDependency */,
+				3FD56CE0246AD6B300AAC351 /* PBXTargetDependency */,
 			);
 			name = VendorEngrams;
 			productName = VendorEngrams;
@@ -205,6 +336,40 @@
 			productReference = 3F48FA3A24375A6D0012583A /* VendorEngramsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		3FD56CC7246AD6B300AAC351 /* VendorGhost */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3FD56CE5246AD6B300AAC351 /* Build configuration list for PBXNativeTarget "VendorGhost" */;
+			buildPhases = (
+				3FD56CC4246AD6B300AAC351 /* Sources */,
+				3FD56CC5246AD6B300AAC351 /* Frameworks */,
+				3FD56CC6246AD6B300AAC351 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VendorGhost;
+			productName = VendorGhost;
+			productReference = 3FD56CC8246AD6B300AAC351 /* VendorGhost.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		3FD56CD0246AD6B300AAC351 /* VendorGhostUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3FD56CE2246AD6B300AAC351 /* Build configuration list for PBXNativeTarget "VendorGhostUI" */;
+			buildPhases = (
+				3FD56CCD246AD6B300AAC351 /* Sources */,
+				3FD56CCE246AD6B300AAC351 /* Frameworks */,
+				3FD56CCF246AD6B300AAC351 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VendorGhostUI;
+			productName = VendorGhostUI;
+			productReference = 3FD56CD1246AD6B300AAC351 /* VendorGhostUI.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -221,6 +386,12 @@
 					3F48FA3924375A6D0012583A = {
 						CreatedOnToolsVersion = 11.4;
 						TestTargetID = 3F48FA2324375A680012583A;
+					};
+					3FD56CC7246AD6B300AAC351 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					3FD56CD0246AD6B300AAC351 = {
+						CreatedOnToolsVersion = 11.4.1;
 					};
 				};
 			};
@@ -239,6 +410,8 @@
 			targets = (
 				3F48FA2324375A680012583A /* VendorEngrams */,
 				3F48FA3924375A6D0012583A /* VendorEngramsTests */,
+				3FD56CC7246AD6B300AAC351 /* VendorGhost */,
+				3FD56CD0246AD6B300AAC351 /* VendorGhostUI */,
 			);
 		};
 /* End PBXProject section */
@@ -262,6 +435,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3FD56CC6246AD6B300AAC351 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FD56CCF246AD6B300AAC351 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FD56CDA246AD6B300AAC351 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -275,6 +463,10 @@
 				3F3668D6244F31850036C655 /* VendorsPresenter.swift in Sources */,
 				3FD2E414243C808200F4F396 /* Network.swift in Sources */,
 				3FD2E412243C7FC700F4F396 /* SomeNetworkProtocol.swift in Sources */,
+				3FD56CEE246ADA8300AAC351 /* VendorsIntentHandler.swift in Sources */,
+				3FD56CEA246AD72B00AAC351 /* Intents.intentdefinition in Sources */,
+				3FD56CF8246ADBB000AAC351 /* VendorError.swift in Sources */,
+				3FD56CF2246ADB5500AAC351 /* DefaultHTTPClient.swift in Sources */,
 				3F3668D4244F31350036C655 /* VendorInteractorProtocol.swift in Sources */,
 				3FD56C1C2458722200AAC351 /* RefreshingScrollView.swift in Sources */,
 				3F48FA2824375A680012583A /* AppDelegate.swift in Sources */,
@@ -294,6 +486,40 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3FD56CC4246AD6B300AAC351 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FD56CEF246ADA8300AAC351 /* VendorsIntentHandler.swift in Sources */,
+				3FD56CFF246ADD9200AAC351 /* VendorInteractorProtocol.swift in Sources */,
+				3FD56CFD246ADD6600AAC351 /* DefaultHTTPClient.swift in Sources */,
+				3FD56CEB246AD72B00AAC351 /* Intents.intentdefinition in Sources */,
+				3FD56CFC246ADD6300AAC351 /* Network.swift in Sources */,
+				3FD56CFE246ADD7D00AAC351 /* SomeNetworkProtocol.swift in Sources */,
+				3FD56CFB246ADD3B00AAC351 /* VendorInteractor.swift in Sources */,
+				3FD56D00246ADD9A00AAC351 /* Vendor.swift in Sources */,
+				3FD56CF9246ADBB000AAC351 /* VendorError.swift in Sources */,
+				3FD56CCB246AD6B300AAC351 /* IntentHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FD56CCD246AD6B300AAC351 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FD56CF0246ADA8300AAC351 /* VendorsIntentHandler.swift in Sources */,
+				3FD56D03246ADDC200AAC351 /* Vendor.swift in Sources */,
+				3FD56D04246ADDC500AAC351 /* Network.swift in Sources */,
+				3FD56CEC246AD72B00AAC351 /* Intents.intentdefinition in Sources */,
+				3FD56D05246ADDC800AAC351 /* DefaultHTTPClient.swift in Sources */,
+				3FD56D01246ADDB300AAC351 /* VendorInteractor.swift in Sources */,
+				3FD56CFA246ADBB000AAC351 /* VendorError.swift in Sources */,
+				3FD56D02246ADDBD00AAC351 /* VendorInteractorProtocol.swift in Sources */,
+				3FD56D06246ADDCF00AAC351 /* SomeNetworkProtocol.swift in Sources */,
+				3FD56CD7246AD6B300AAC351 /* IntentViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -301,6 +527,16 @@
 			isa = PBXTargetDependency;
 			target = 3F48FA2324375A680012583A /* VendorEngrams */;
 			targetProxy = 3F48FA3B24375A6D0012583A /* PBXContainerItemProxy */;
+		};
+		3FD56CDD246AD6B300AAC351 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3FD56CD0246AD6B300AAC351 /* VendorGhostUI */;
+			targetProxy = 3FD56CDC246AD6B300AAC351 /* PBXContainerItemProxy */;
+		};
+		3FD56CE0246AD6B300AAC351 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3FD56CC7246AD6B300AAC351 /* VendorGhost */;
+			targetProxy = 3FD56CDF246AD6B300AAC351 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -311,6 +547,14 @@
 				3F48FA3324375A6D0012583A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		3FD56CD8246AD6B300AAC351 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3FD56CD9246AD6B300AAC351 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -366,6 +610,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INTENTS_CODEGEN_LANGUAGE = Swift;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -420,6 +665,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INTENTS_CODEGEN_LANGUAGE = Swift;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -433,6 +679,7 @@
 		3F48FA4F24375A6D0012583A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -454,6 +701,7 @@
 		3F48FA5024375A6D0012583A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -516,6 +764,82 @@
 			};
 			name = Release;
 		};
+		3FD56CE3246AD6B300AAC351 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8JLK8JR28D;
+				INFOPLIST_FILE = VendorGhostUI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = RyanJohnstone.VendorEngrams.VendorGhostUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3FD56CE4246AD6B300AAC351 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8JLK8JR28D;
+				INFOPLIST_FILE = VendorGhostUI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = RyanJohnstone.VendorEngrams.VendorGhostUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3FD56CE6246AD6B300AAC351 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8JLK8JR28D;
+				INFOPLIST_FILE = VendorGhost/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = RyanJohnstone.VendorEngrams.VendorGhost;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3FD56CE7246AD6B300AAC351 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8JLK8JR28D;
+				INFOPLIST_FILE = VendorGhost/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = RyanJohnstone.VendorEngrams.VendorGhost;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -542,6 +866,24 @@
 			buildConfigurations = (
 				3F48FA5224375A6D0012583A /* Debug */,
 				3F48FA5324375A6D0012583A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3FD56CE2246AD6B300AAC351 /* Build configuration list for PBXNativeTarget "VendorGhostUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FD56CE3246AD6B300AAC351 /* Debug */,
+				3FD56CE4246AD6B300AAC351 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3FD56CE5246AD6B300AAC351 /* Build configuration list for PBXNativeTarget "VendorGhost" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FD56CE6246AD6B300AAC351 /* Debug */,
+				3FD56CE7246AD6B300AAC351 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

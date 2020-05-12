@@ -26,7 +26,7 @@ class MultipleVendorResponseTests : XCTestCase {
         
         let vendorInteractor = VendorInteractor(network: network)
         
-        vendorInteractor.getVendors()
+        _ = vendorInteractor.getVendors()
            
             .sink(receiveCompletion: { completion in
                 switch completion {
@@ -38,7 +38,7 @@ class MultipleVendorResponseTests : XCTestCase {
             }, receiveValue: { vendors in
                 self.vendors = vendors
                 expectation.fulfill()
-            }).store(in: &disposables)
+            })
         
         fileResponse.sendData()
         

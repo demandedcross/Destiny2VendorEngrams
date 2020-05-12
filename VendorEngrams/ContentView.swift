@@ -35,6 +35,7 @@ struct ContentView_Previews: PreviewProvider {
     
     class PreviewPresenter : VendorPresenterProtocol {
         func displayVendors() -> AnyPublisher<[VendorVM], Error> {
+            publisher.send(vendors)
              return publisher.eraseToAnyPublisher()
         }
         

@@ -65,31 +65,3 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
 }
-
-class DefaultHTTPClient : SomeNetworkProtocol {
-    func makeRequest(url: String) -> AnyPublisher<Data, VendorError> {
-        return URLSession.shared.dataTaskPublisher(for: URLRequest(url: URL(string:url)!))
-            .tryMap { data, response in
-                return data
-        }
-        .mapError { error in
-            .network(description: error.localizedDescription)
-        }
-        .eraseToAnyPublisher()
-    }
-    
-    func makeRequest(url: String, completionHandler: @escaping (Data) -> Void) {
-        let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
-            DispatchQueue.main.async {
-                completionHandler(data!)
-            }
-        }
-        
-        task.resume()
-    }
-}
-
-public enum VendorError: Error {
-  case network(description: String)
-}
-
